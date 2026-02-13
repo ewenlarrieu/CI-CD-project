@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CI CD projet</title>
+  </head>
+  <body>
+    <h1>CI CD project</h1>
+    <div id="message"></div>
+    <script>
+      fetch("/api/hello")
+        .then((response) => response.json())
+        .then((data) => {
+          document.getElementById("message").textContent = data.message;
+        })
+        .catch((error) => {
+          document.getElementById("message").textContent = "Erreur: " + error;
+        });
+    </script>
+  </body>
+</html>
